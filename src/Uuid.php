@@ -22,7 +22,6 @@ class Uuid {
      * @param int $entityCode
      * @param int $appCode
      * @return string
-     * @throws \Exception
      */
     public static function generateUuid(int $entityCode = 0, int $appCode = 0): string
     {
