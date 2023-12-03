@@ -1,6 +1,6 @@
 <?php
 
-if (! function_exists('gen_uuid')) {
+if (! function_exists('generate_uuid')) {
 
     /**
      * Generates UUID with specific algorithm
@@ -9,7 +9,7 @@ if (! function_exists('gen_uuid')) {
      * @param int $appCode
      * @return string
      */
-    function generate_uuid(int $entityCode = null, int $appCode = null)
+    function generate_uuid(int $entityCode = 0, int $appCode = 0)
     {
         return \Codiliateur\SmartUuid\Uuid::generateUuid($entityCode, $appCode);
     }

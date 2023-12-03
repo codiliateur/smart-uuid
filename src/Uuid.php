@@ -15,8 +15,8 @@ class Uuid {
     const APP_CODE = 'app_code';
     const ENTITY_CODE = 'entity_code';
 
-    const TS_FORMAT_CARBON = 'Carbon';
-    const TS_FORMAT_DATETIME = 'DateTime';
+    const TS_FORMAT_CARBON = 1;
+    const TS_FORMAT_DATETIME = 2;
 
     /**
      * @param int $entityCode
@@ -24,7 +24,7 @@ class Uuid {
      * @return string
      * @throws \Exception
      */
-    public static function generateUuid(int $entityCode, int $appCode): string
+    public static function generateUuid(int $entityCode = 0, int $appCode = 0): string
     {
         $mt = preg_split("/(\s|\.)/", microtime());
 
@@ -41,10 +41,10 @@ class Uuid {
     /**
      * @param string $uuid
      * @param string $part
-     * @param string|null $format
+     * @param string|int|null $format
      * @return mixed
      */
-    public static function extractUuidPart(string $uuid, string $part, string $format = null)
+    public static function extractUuidPart(string $uuid, string $part, $format = null)
     {
         $part = strtolower($part);
         if ($part == static::TIMESTAMP) {
@@ -63,9 +63,9 @@ class Uuid {
      *
      * @param int $bytes
      * @return string
-     * @throws \Exception
      */
-    protected static function randomHex(int $bytes = 4): string {
+    protected static function randomHex(int $bytes = 4): string
+    {
         $random = random_bytes(6);
         $random[0] = pack("C", ord($random[0]) | 1);
 
@@ -76,10 +76,10 @@ class Uuid {
      * Extract timestamp part
      *
      * @param string $uuid
-     * @param string $format
-     * @return \DateTime|Carbon|string
+     * @param mixed $format
+     * @return mixed
      */
-    protected static function extractUuidTimestamp(string $uuid, string $format = 'Carbon')
+    protected static function extractUuidTimestamp(string $uuid, $format = self::TS_FORMAT_CARBON)
     {
 
         $tz = date_default_timezone_get();
