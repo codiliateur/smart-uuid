@@ -11,7 +11,7 @@ that enable to include into UUID next information:
 
 Run command
 
-    composer require codiliteur/smqrt-uuid
+    composer require codiliteur/smart-uuid
 
 ## Functions
 
