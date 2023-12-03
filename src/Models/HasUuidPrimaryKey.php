@@ -1,6 +1,6 @@
 <?php
 
-namespace Codiliateur\SmartUuid;
+namespace Codiliateur\SmartUuid\Models;
 
 use Codiliateur\SmartUuid\Uuid as SmartUuid;
 
