@@ -29,15 +29,5 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Codiliateur\\Uuid\\UuidServiceProvider"
-            ],
-            "aliases": {
-                "SmartUuid": "Codiliateur\\Uuid\\Uuid"
-            }
-        }
     }
 }
