@@ -1,0 +1,43 @@
+{
+    "name": "codiliateur/smart-uuid",
+    "description": "Specific UUID generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ilia Khondozhko",
+            "email": "ilia.khondozhko@gmail.com"
+        }
+    ],
+    "require" : {
+        "php" : "^7.3|^8.0",
+        "laravel/framework": "^8.0|^9.0|^10.0",
+        "nesbot/carbon": "^2.53.1"
+    },
+    "require-dev" : {
+        "fakerphp/faker": "^1.9.1",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codiliateur\\SmartUuid\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codiliateur\\Uuid\\UuidServiceProvider"
+            ],
+            "aliases": {
+                "SmartUuid": "Codiliateur\\Uuid\\Uuid"
+            }
+        }
+    }
+}
