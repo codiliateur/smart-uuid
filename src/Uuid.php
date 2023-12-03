@@ -79,8 +79,9 @@ class Uuid {
      * @param mixed $format
      * @return mixed
      */
-    protected static function extractUuidTimestamp(string $uuid, $format = self::TS_FORMAT_CARBON)
+    protected static function extractUuidTimestamp(string $uuid, $format = null)
     {
+        $format = $format ?? self::TS_FORMAT_CARBON;
 
         $tz = date_default_timezone_get();
 

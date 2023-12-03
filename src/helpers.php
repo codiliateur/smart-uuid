@@ -22,10 +22,10 @@ if (! function_exists('extract_uuid_part')) {
      *
      * @param string $uuid
      * @param string $part
-     * @param string|null $format
+     * @param mixed $format
      * @return mixed
      */
-    function extract_uuid_part(string $uuid, string $part, string $format = 'Carbon')
+    function extract_uuid_part(string $uuid, string $part, $format = null)
     {
         return \Codiliateur\SmartUuid\Uuid::extractUuidPart($uuid, $part, $format);
     }
