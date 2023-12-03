@@ -1,6 +1,6 @@
 <?php
 
-namespace Codiliteur\Uuid;
+namespace Codiliteur\SmartUuid;
 
 use Illuminate\Support\ServiceProvider;
 

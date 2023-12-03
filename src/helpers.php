@@ -23,7 +23,7 @@ if (! function_exists('extract_uuid_part')) {
      * @param string $uuid
      * @param string $part
      * @param string|null $format
-     * @return \Laragrad\Uuid\Support\DateTime|\Carbon\Carbon|string
+     * @return mixed
      */
     function extract_uuid_part(string $uuid, string $part, string $format = 'Carbon')
     {

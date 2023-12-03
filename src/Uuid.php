@@ -24,7 +24,7 @@ class Uuid {
      * @return string
      * @throws \Exception
      */
-    public function generateUuid(int $entityCode, int $appCode): string
+    public static function generateUuid(int $entityCode, int $appCode): string
     {
         $mt = preg_split("/(\s|\.)/", microtime());
 
