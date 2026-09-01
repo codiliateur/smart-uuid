@@ -18,7 +18,7 @@ trait HasUuidPrimaryKey
     {
         static::creating(function ($model) {
             if (! $model->getKey()) {
-                $model->{$model->getKeyName()} = $this->generateId();
+                $model->{$model->getKeyName()} = static::generateIdValue();
             }
         });
     }
@@ -26,7 +26,7 @@ trait HasUuidPrimaryKey
     /**
      * @return string
      */
-    public function generateId()
+    public static function generateIdValue()
     {
         return SmartUuid::generateUuid($model->getEntityCode(), $model->getAppCode());
     }
